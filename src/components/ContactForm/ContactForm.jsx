@@ -21,7 +21,7 @@ const ContactFormWrap = styled.form`
   }
 `;
 
-const   = styled.button`
+const  Button = styled.button`
   
 `
 class ContactForm extends Component {
