@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import styled from '@emotion/styled';
+import Button from 'components/ButtonStiled/Button';
 
 const ContactFormWrap = styled.form`
   display: flex;
   width: max-content;
   flex-direction: column;
+  background-color: ${p => p.theme.colors.muted};
   gap: ${props => props.theme.space[2]}px;
   margin-left: ${p => p.theme.space[1]}px;
   border: ${p => p.theme.space[1]}px solid ${p => p.theme.colors.black};
@@ -21,9 +23,6 @@ const ContactFormWrap = styled.form`
   }
 `;
 
-const  Button = styled.button`
-  
-`
 class ContactForm extends Component {
   state = {
     name: '',
@@ -76,7 +75,7 @@ class ContactForm extends Component {
             required
           />
         </label>
-        <button type="submit">Add contact</button>
+        <Button type="submit">Add contact</Button>
       </ContactFormWrap>
     );
   }

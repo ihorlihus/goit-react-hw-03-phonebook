@@ -1,21 +1,39 @@
+import styled from '@emotion/styled';
+// import Button from './ButtonStiled';
+import Button from './../ButtonStiled/Button';
+
+const ListItemWrap = styled.li`
+  display: flex;
+  width: 300px;
+  background-color: ${p => p.theme.colors.muted};
+  justify-content: space-between;
+  border: ${p => p.theme.space[1]}px solid ${p => p.theme.colors.black};
+  margin-bottom: ${p => p.theme.space[2]}px;
+  padding: ${props => props.theme.space[2]}px;
+`;
+
+const List = styled.ul`
+  padding-left: ${p => p.theme.space[1]}px;
+`;
+
 const ContactList = ({ contacts, onDeleteContact }) => {
   return (
-    <ul>
+    <List>
       {contacts.map(contact => {
         return (
-          <li key={contact.id}>
+          <ListItemWrap key={contact.id}>
             {contact.name}: {contact.number}
-            <button
+            <Button
               onClick={() => {
                 onDeleteContact(contact.id);
               }}
             >
               Delete
-            </button>
-          </li>
+            </Button>
+          </ListItemWrap>
         );
       })}
-    </ul>
+    </List>
   );
 };
 
